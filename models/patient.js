@@ -17,7 +17,7 @@ const patientSchema = new mongoose.Schema({
   patientNote: [noteSchema],
   //use diagnosis schema to add many diagnosis
   diagnosis: [diagnosisSchema],
-  timestamps: true,
+  // timestamps: true,
 });
 
 module.exports = mongoose.model("Patient", patientSchema);
