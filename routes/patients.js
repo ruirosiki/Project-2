@@ -20,6 +20,10 @@ router.get("/:id", patientCtrl.show);
 //route to edit the patient information
 router.get("/:id/edit", patientCtrl.updatePatientForm);
 
-//route to push/patch the updated patient information.
+//route to put/patch the updated patient information.
+router.put("/:id", patientCtrl.update);
+
+//route to delete patient
+router.delete("/:id", patientCtrl.deletePatient);
 
 module.exports = router;

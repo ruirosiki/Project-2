@@ -46,7 +46,7 @@ function show(req, res, next) {
     .catch(next);
 }
 //2 Steps to Update 1. render update form and 2. actually push the update to database
-//READ - render a form to update patient details
+//READ - STEP 1: render a form to update patient details
 function updatePatientForm(req, res) {
   Patient.findById(req.params.id).then((patient) => {
     res.render("patients/edit", {
@@ -56,10 +56,26 @@ function updatePatientForm(req, res) {
   });
 }
 
-//UPDATE
+//UPDATE - STEP 2: update the database with edited information
 function update(req, res, next) {
-  Patient.findById(req.params.id);
-  //if patient is not logged in user, then can't update
+  Patient.findById(req.params.id)
+    //update patient req.body
+    .then((patient) => {
+      return patient.updateOne(req.body);
+    })
+    //redirect to patient page
+    .then(() => res.redirect(`/patients/${req.params.id}`))
+    .catch(next);
+}
+
+//DELETE - delete patient from the database
+function deletePatient(req, res, next) {
+  Patient.findById(req.params.id)
+    .then((patient) => {
+      return patient.deleteOne();
+    })
+    .then(() => res.redirect("/patients"))
+    .catch(next);
 }
 module.exports = {
   index,
@@ -68,4 +84,5 @@ module.exports = {
   show,
   updatePatientForm,
   update,
+  deletePatient,
 };

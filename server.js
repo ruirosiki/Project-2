@@ -10,6 +10,8 @@ const methodOverride = require("method-override");
 
 const indexRouter = require("./routes/index");
 const patientRouter = require("./routes/patients");
+const noteRouter = require("./routes/notes");
+
 const app = express();
 
 require("./config/database");
@@ -45,6 +47,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
 app.use("/patients", patientRouter);
+app.use("/notes", noteRouter);
 
 app.use(function (req, res, next) {
   next(createError(404));

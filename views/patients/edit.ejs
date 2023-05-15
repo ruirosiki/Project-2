@@ -1,7 +1,7 @@
 <%- include("../partials/header") %>
 <h1>Edit Patient Page</h1>
 
-<form action="/patient/<%= patient.id %>?_method=PUT" method="POST" autocomplete="off">
+<form action="/patients/<%= patient.id %>?_method=PUT" method="POST" autocomplete="off">
     <input type="text" name="firstName" value="<%= patient.firstName %>"> 
     <input type="text" name="lastName" value="<%= patient.lastName %>">
     <input type="text" name="phone" value="<%= patient.phone %>">

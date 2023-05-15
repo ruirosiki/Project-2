@@ -7,12 +7,12 @@ const noteSchema = new mongoose.Schema({
     ref: "Patient",
   },
   noteTitle: String,
-  content: String,
-  signature: {
-    type: String,
-    required: true,
-  },
-  date: Date,
+  noteContent: String,
+  //   signature: {
+  //     type: String,
+  //     required: true,
+  //   },
+  noteDate: Date,
   //DO I NEED TO ADD THIS? Since the user is already embedded in the patient.
   user: {
     type: mongoose.Schema.Types.ObjectId,

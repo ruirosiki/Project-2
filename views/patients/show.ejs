@@ -5,8 +5,13 @@
 </h1>
 <h4><%= patient.phone %></h4>
 <hr> 
-<a  href="/patients/<%= patient.id %>/edit"><button>Update Patient Details</button></a><br>
+<form action="/patients/<%= patient.id %>?_method=DELETE" method="POST">
+    <button type="submit">Discharge Patient</button>
+</form>
+<hr> 
+<a href="/patients/<%= patient.id %>/edit"><button>Update Patient Details</button></a><br>
 <hr>
+<a href="/notes/<%= patient.id %>/new"><button>Enter Patient Note</button></a><br><br>
 <% if (patient.note.length) { %>
     <ul>
         <li>

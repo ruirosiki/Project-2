@@ -1,4 +1,17 @@
 <%- include("../partials/header") %>
-<h1>Create New Note Form</h1>
+<h1>
+    <%= patient.firstName %> 
+    <%= patient.lastName %>
+</h1>
+<form action="/patients/<%= patient.id %>" method="POST" autocomplete="off">
+    <label>Note Title</label>
+    <input type="text" name="noteTitle">
+    <label>Patient Note</label>
+    <textarea name="noteContent"></textarea>
+    <label>Date</label>
+    <input type="datetime" name="noteDate">
+    <button type="submit">Save Patient Note</button>
+</form>
+
 
 <%- include("../partials/footer") %>
