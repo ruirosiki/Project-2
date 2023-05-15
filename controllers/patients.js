@@ -17,8 +17,8 @@ function index(req, res, next) {
     .catch(next);
 }
 
-//CREATE - 2 Steps GET router to get the form, another to insert data into database
-//render new Patient form.
+//2 Steps GET router to get the form (READ), another to insert data into database (CREATE)
+//READ - render new Patient form.
 function newPatient(req, res) {
   res.render("patients/new", { title: "New Patient" });
 }
@@ -45,10 +45,27 @@ function show(req, res, next) {
     })
     .catch(next);
 }
+//2 Steps to Update 1. render update form and 2. actually push the update to database
+//READ - render a form to update patient details
+function updatePatientForm(req, res) {
+  Patient.findById(req.params.id).then((patient) => {
+    res.render("patients/edit", {
+      patient,
+      title: "Update Patient Details",
+    });
+  });
+}
 
+//UPDATE
+function update(req, res, next) {
+  Patient.findById(req.params.id);
+  //if patient is not logged in user, then can't update
+}
 module.exports = {
   index,
   newPatient,
   create,
   show,
+  updatePatientForm,
+  update,
 };

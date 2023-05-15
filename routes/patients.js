@@ -17,4 +17,9 @@ router.post("/", patientCtrl.create);
 //route for viewing individual patient
 router.get("/:id", patientCtrl.show);
 
+//route to edit the patient information
+router.get("/:id/edit", patientCtrl.updatePatientForm);
+
+//route to push/patch the updated patient information.
+
 module.exports = router;

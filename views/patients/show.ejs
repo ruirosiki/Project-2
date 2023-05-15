@@ -1,5 +1,22 @@
 <%- include("../partials/header") %>
 <h1>
-    <%= patient.name %>
+    <%= patient.firstName %> 
+    <%= patient.lastName %>
 </h1>
+<h4><%= patient.phone %></h4>
+<hr> 
+<a  href="/patients/<%= patient.id %>/edit"><button>Update Patient Details</button></a><br>
+<hr>
+<% if (patient.note.length) { %>
+    <ul>
+        <li>
+            <% patient.note.forEach(function(note) { %>
+                <%= note.noteTitle %>
+                <% }) %>
+                
+                <% } else {%>
+                   <h5>No Notes Yet</h5> 
+                <% } %>
+            </li>
+        </ul>
 <%- include("../partials/footer") %>

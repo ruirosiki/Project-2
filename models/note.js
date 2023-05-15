@@ -6,6 +6,7 @@ const noteSchema = new mongoose.Schema({
     //reference patient to tie note to patient
     ref: "Patient",
   },
+  noteTitle: String,
   content: String,
   signature: {
     type: String,
