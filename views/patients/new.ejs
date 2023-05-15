@@ -1,3 +1,15 @@
 <%- include("../partials/header") %>
 <h1>New Patient Page</h1>
+<form id="new=patient" action="/patients" method="POST" autocomplete="off">
+   <label>First Name: </label>
+    <input type="text" name="firstName">
+    <label>Last Name:</label>
+    <input type="text" name="lastName">
+    <label>Phone Number</label>
+    <input type="number" name="phone">
+    <label>Diagnosis</label>
+    <input type="text" name="diagnosis">
+    <input type="submit" value="Submit">
+    <input type="reset">
+</form>
 <%- include("../partials/footer") %>

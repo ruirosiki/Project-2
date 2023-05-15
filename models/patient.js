@@ -3,20 +3,27 @@ const noteSchema = require("./note");
 const diagnosisSchema = require("./diagnosis");
 //defines patient schema
 const patientSchema = new mongoose.Schema({
-  name: {
+  firstName: {
     type: String,
     required: true,
   },
-  phoneNumber: Number,
+  lastName: {
+    type: String,
+    required: true,
+  },
+  phone: {
+    type: Number,
+    // enum: "^(([0-9]{3})|[0-9]{3}-)[0-9]{3}-[0-9]{4}$",
+  },
   //attaches patient to single user
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
   //use note schema to add many notes
-  patientNote: [noteSchema],
+  note: [noteSchema],
   //use diagnosis schema to add many diagnosis
-  diagnosis: [diagnosisSchema],
+  // diagnosis: [diagnosisSchema],
   // timestamps: true,
 });
 

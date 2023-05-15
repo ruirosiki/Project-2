@@ -2,7 +2,9 @@
 <h1>Patient Index Page</h1>
 <ul> 
     <% patients.forEach(function(patient) { %>
-        <%= patient.name %>
+        <%= patient.firstName %>
+        <%= patient.lastName %>
+        <a  href="/patients/<%= patient.id %>"><button>View Patient Chart</button></a><br>
    <%  }) %>
 </ul>
 <%- include("../partials/footer") %>

@@ -11,4 +11,10 @@ router.get("/", patientCtrl.index);
 //route for new patient form
 router.get("/new", patientCtrl.newPatient);
 
+//route for creating a new patient
+router.post("/", patientCtrl.create);
+
+//route for viewing individual patient
+router.get("/:id", patientCtrl.show);
+
 module.exports = router;
