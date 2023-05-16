@@ -16,5 +16,7 @@ router.get("/patients/:patientId/:noteId/edit", noteCtrl.updateNoteForm);
 
 //route to PUT update info into patient note
 router.put("/patients/:patientId/:noteId", noteCtrl.update);
+
 //route to DELETE note
+router.delete();
 module.exports = router;
