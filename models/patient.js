@@ -12,7 +12,7 @@ const patientSchema = new mongoose.Schema({
     required: true,
   },
   phone: {
-    type: Number,
+    type: String,
     // enum: "^(([0-9]{3})|[0-9]{3}-)[0-9]{3}-[0-9]{4}$",
   },
   //attaches patient to single user

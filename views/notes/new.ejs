@@ -3,7 +3,7 @@
     <%= patient.firstName %> 
     <%= patient.lastName %>
 </h1>
-<form action="/patients/<%= patient.id %>" method="POST" autocomplete="off">
+<form action="/patients/<%= patient._id %>/notes" method="POST" autocomplete="off">
     <label>Note Title</label>
     <input type="text" name="noteTitle">
     <label>Patient Note</label>

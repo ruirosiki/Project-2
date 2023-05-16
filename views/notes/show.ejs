@@ -1,3 +1,16 @@
 <%- include("../partials/header") %>
-<h1>Show Single Note - Edit/Update Note</h1>
+<h1><%= patient.firstName %> <%= patient.lastName %></h1><br>
+<h3>
+    <label><%= patient.firstName %> <%= patient.lastName %></label><br>
+    <label><%= note.noteTitle %></label><br>
+    <label><%= note.noteDate %></label><br>
+    <label><%= note.noteContent %></label><br>
+</label>
+
+<a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button>Edit Note</button></a>
+<a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button>Delete Note</button></a>
+</h3>
+
+
+
 <%- include("../partials/footer") %>

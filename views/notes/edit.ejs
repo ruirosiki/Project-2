@@ -1,0 +1,12 @@
+<%- include("../partials/header") %>
+<h1>Edit Patient Note</h1>
+
+<form action="/patients/<%= patient.id %>/<%= note.id %>?_method=PUT" method="POST" autocomplete="off">
+    <input type="text" name="firstName" value="<%= note.noteTitle %>"> 
+    <input type="text" name="lastName" value="<%= note.noteContent %>">
+    <input type="text" name="phone" value="<%= note.noteDate %>">
+    <button type="submit">Update Patient Note</button>
+</form>
+
+
+<%- include("../partials/footer") %>

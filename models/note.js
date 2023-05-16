@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
 
 const noteSchema = new mongoose.Schema({
-  patient: {
-    type: mongoose.Schema.Types.ObjectId,
-    //reference patient to tie note to patient
-    ref: "Patient",
-  },
   noteTitle: String,
   noteContent: String,
   //   signature: {
@@ -13,11 +8,6 @@ const noteSchema = new mongoose.Schema({
   //     required: true,
   //   },
   noteDate: Date,
-  //DO I NEED TO ADD THIS? Since the user is already embedded in the patient.
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
   //   timestamps: true,
 });
 

@@ -11,12 +11,14 @@
 <hr> 
 <a href="/patients/<%= patient.id %>/edit"><button>Update Patient Details</button></a><br>
 <hr>
-<a href="/notes/<%= patient.id %>/new"><button>Enter Patient Note</button></a><br><br>
+<a href="/patients/<%= patient.id %>/notes/new"><button>Enter Patient Note</button></a><br><br>
 <% if (patient.note.length) { %>
     <ul>
-        <li>
-            <% patient.note.forEach(function(note) { %>
+        <% patient.note.forEach(function(note) { %>
+            <li>
                 <%= note.noteTitle %>
+                <a href="/patients/<%= patient.id %>/<%=note.id %>"><button>View Note</button></a>
+            </li>
                 <% }) %>
                 
                 <% } else {%>
