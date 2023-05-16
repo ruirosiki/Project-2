@@ -58,14 +58,23 @@ function update(req, res, next) {
   Patient.findById(req.params.patientId)
     .then((patient) => {
       console.log(patient);
-      const note = patient.note.id(req.params.noteId);
-      note.set(req.body);
-      return patient.save();
+      const noteId = patient.note.id(req.params.noteId);
+      patient.note.id(noteId).updateOne();
     })
     .then(() =>
       res.redirect(`/patients/${req.params.patientId}/${req.params.noteId}`)
     )
     .catch(next);
+}
+
+function deleteNote(req, res, next) {
+  Patient.findById(req.params.patientId)
+    .then((patient) => {
+      const noteId = patient.note.id(req.params.noteId);
+      patient.note.id(noteId).deleteOne();
+      return patient.save();
+    })
+    .then(() => res.redirect(`/patients/${req.params.patientId}`));
 }
 
 module.exports = {
@@ -74,4 +83,5 @@ module.exports = {
   show,
   updateNoteForm,
   update,
+  deleteNote,
 };

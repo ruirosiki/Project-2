@@ -8,7 +8,9 @@
 </label>
 
 <a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button>Edit Note</button></a>
-<a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button>Delete Note</button></a>
+<form action="/patients/<%= patient.id %>/<%= note.id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete Note</button>
+</form>
 </h3>
 
 
