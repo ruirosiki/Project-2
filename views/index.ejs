@@ -1,15 +1,19 @@
 <%- include('./partials/header') %>
 
-<h2>Welcome to Patient Documentation </h2>
+<h2 id="login-header">Welcome to Patient Documentation </h2>
 
-
-<% if (user) { %>
-    <h4>Please click the button below to logout</h4>
-    <a class="nav-link" href="/logout">Log Out</a>
-<% } else { %>
-    <h4>Please Login Below</h4>
-
-    <a class="nav-link" href="/auth/google">Log In with Google</a>
-<% } %>
+    <div id="login">
+        
+        <% if (user) { %>
+            <h4>Please click the button below to logout</h4>
+            <div>
+                <a class="nav-link-login" href="/logout"><button class="btn btn-primary" type="button">Log Out</button><a>
+                <% } else { %>
+                    <h4>Please Login Below</h4>  
+                     <a class="nav-link-login" href="/auth/google"><button class="btn btn-primary" type="button">Log In With Google</button></a>
+                        <% } %>
+                    </button>
+                </div>
+    </div>
 
 <%- include('./partials/footer') %>

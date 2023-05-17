@@ -1,10 +1,23 @@
 <%- include("../partials/header") %>
-<h1>Patient Index Page</h1>
-<ul> 
+<h1 id="my-patients">My Patients</h1>
+
+
+<table id="patient-list">
+    <thead>
+        <tr>
+            <th id="p-header">Patient Name</th>
+            <th id="p-header">Phone Number</th>
+            <th id="p-header">Patient Chart</th>
+        </tr>
+    </thead>
+<tbody>
     <% patients.forEach(function(patient) { %>
-        <%= patient.firstName %>
-        <%= patient.lastName %>
-        <a  href="/patients/<%= patient.id %>"><button>View Patient Chart</button></a><br>
-   <%  }) %>
-</ul>
+    <tr>
+        <td id="p-name"><%= patient.firstName %> <%= patient.lastName %></td>
+        <td id="p-phone"> <%= patient.phone %></td>
+        <td id="p-chart"><a  href="/patients/<%= patient.id %>"><button type="button" class="btn btn-secondary">View Patient Chart</button></a></td>
+    </tr>
+    <%  }) %>
+    </tbody>
+</table>
 <%- include("../partials/footer") %>

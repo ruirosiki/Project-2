@@ -1,1 +1,56 @@
+body {
+    background-color: #E7EBE0FF
+}
 
+#login-header {
+    text-align: center;
+}
+
+#login {
+    text-align: center;
+}
+
+.navbar-brand {
+    background-color: #ABD6DFFF;
+}
+
+.collapse {
+    background-color: #7DB46CFF;
+}
+
+.nav-link-login {
+    /* color: #ABD6DFFF; */
+}
+
+.nav-link {
+    color: #E7EBE0FF;
+}
+
+#patient-list {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#my-patients {
+    text-align: center;
+}
+
+thead {
+    padding: 10%;
+}
+
+#p-header {
+    text-align: center;
+    width: 20%;
+}
+
+#p-name {
+    margin-right: 30%;
+}
+
+#patient-show {
+    text-align: center;
+}
+
+#new-patient-show {}

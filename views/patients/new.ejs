@@ -1,13 +1,13 @@
 <%- include("../partials/header") %>
-<h1>New Patient Page</h1>
-<form id="new=patient" action="/patients" method="POST" autocomplete="off">
+<h1 id="new-patient-show">New Patient Page</h1>
+<form id="new-patient" action="/patients" method="POST" autocomplete="off">
    <label>First Name: </label>
     <input type="text" name="firstName">
     <label>Last Name:</label>
     <input type="text" name="lastName">
     <label>Phone Number</label>
     <input type="number" name="phone">
-    <input type="submit" value="Submit">
-    <input type="reset">
+    <button type="submit" class="btn btn-secondary">Submit</button>
+    <button type="reset" class="btn btn-secondary">Reset Form</button>
 </form>
 <%- include("../partials/footer") %>
