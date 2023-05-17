@@ -1,13 +1,20 @@
 <%- include("../partials/header") %>
-<h1 id="new-patient-show">New Patient Page</h1>
-<form id="new-patient" action="/patients" method="POST" autocomplete="off">
-   <label>First Name: </label>
+<h1 id="new-patient-show">New Patient</h1>
+<div id="new-patient">
+<form id="new-patient-form" action="/patients" method="POST" autocomplete="off">
+   <div id="new-patient-details">
+    <label>First Name: </label>
     <input type="text" name="firstName">
     <label>Last Name:</label>
     <input type="text" name="lastName">
     <label>Phone Number</label>
     <input type="number" name="phone">
-    <button type="submit" class="btn btn-secondary">Submit</button>
-    <button type="reset" class="btn btn-secondary">Reset Form</button>
-</form>
+</div><br><br>
+    <div id="new-patient-btns">
+        <button type="submit" class="btn btn-secondary" id="add-patient-btn">Add Patient</button>
+        <button type="reset" class="btn btn-secondary" id="reset-patient-btn">Reset Form</button>
+    </div>
+    </form>
+
+</div>
 <%- include("../partials/footer") %>

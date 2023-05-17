@@ -53,4 +53,41 @@ thead {
     text-align: center;
 }
 
-#new-patient-show {}
+#new-patient {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+#new-patient-show {
+    text-align: center;
+}
+
+#new-patient-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-patient-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 10px;
+}
+
+#add-patient-btn {
+    align-items: center;
+}
+
+#patients-list-header {
+    margin-bottom: 10%;
+    border-bottom: 1px solid gray;
+}
+
+#patients-list-row {
+    border-bottom: 1px solid gray;
+}
+
+.btn {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .8)
+}
