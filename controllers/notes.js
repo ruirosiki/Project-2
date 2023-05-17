@@ -57,9 +57,9 @@ function updateNoteForm(req, res, next) {
 function update(req, res, next) {
   Patient.findById(req.params.patientId)
     .then((patient) => {
-      console.log(patient);
-      const noteId = patient.note.id(req.params.noteId);
-      patient.note.id(noteId).updateOne();
+      const theNote = patient.note.id(req.params.noteId);
+      theNote.set(req.body);
+      patient.save();
     })
     .then(() =>
       res.redirect(`/patients/${req.params.patientId}/${req.params.noteId}`)
