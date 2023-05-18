@@ -1,17 +1,20 @@
 <%- include("../partials/header") %>
-<h1>
-    <%= patient.firstName %> 
-    <%= patient.lastName %>
+<h1 id="new-note-title">
+New Patient Note
 </h1>
-<form action="/patients/<%= patient._id %>/notes" method="POST" autocomplete="off">
-    <label>Note Title</label>
+<div class="card text-center mb-3" id="new-note" style="width: 18rem;">
+    <div class="card-body" id="note-square">
+    <h5 class="card-title" id="new-note-patient" ><%= patient.firstName %> <%= patient.lastName %></h5>
+<form id="new-note-form" action="/patients/<%= patient._id %>/notes" method="POST" autocomplete="off">
+    <label class="new-note-details">Date</label>
+    <input type="datetime-local" name="noteDate">
+    <label class="new-note-details">Note Title</label>
     <input type="text" name="noteTitle">
-    <label>Patient Note</label>
-    <textarea name="noteContent"></textarea>
-    <label>Date</label>
-    <input type="datetime" name="noteDate">
-    <button type="submit">Save Patient Note</button>
+    <label class="new-note-details">Patient Note</label>
+    <textarea id="new-note-content" name="noteContent"></textarea>
+    <button type="submit" class="btn btn-secondary" id="view-note">Save Patient Note</button>
 </form>
-
+</div>
+</div>
 
 <%- include("../partials/footer") %>

@@ -1,5 +1,5 @@
 body {
-    background-color: #E7EBE0FF
+    /* background-color: #E7EBE0FF */
 }
 
 #login-header {
@@ -56,19 +56,14 @@ thead {
 #new-patient {
     margin: auto;
     width: 50%;
-    padding: 10px;
 }
 
 #new-patient-show {
     text-align: center;
 }
 
-#new-patient-details {
-    display: flex;
-    flex-direction: column;
-}
-
-#new-patient-btns {
+#new-patient-btns,
+#patient-show-btns {
     display: flex;
     justify-content: space-evenly;
     margin: auto;
@@ -90,4 +85,53 @@ thead {
 
 .btn {
     box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .8)
+}
+
+#patient-notes-index {
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+#note-square {
+    background-color: #E7EBE0FF;
+}
+
+#view-note {
+    justify-self: last baseline;
+}
+
+#new-note-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#new-note-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#new-note,
+#new-patient {
+    margin: auto;
+    width: 20%;
+}
+
+#new-note-patient {
+    text-decoration: underline;
+}
+
+#new-note-content,
+#new-patient-details,
+#edit-patient-details {
+    height: 10rem;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.new-note-details,
+.new-patient-details {
+    margin-top: 15px;
 }
