@@ -58,17 +58,31 @@ thead {
     width: 50%;
 }
 
-#new-patient-show {
+#new-patient-show,
+#edit-patient-show {
     text-align: center;
 }
 
-#new-patient-btns,
+#patient-btns {
+    display: flex;
+    justify-content: space-evenly;
+    margin-left: -20%;
+}
+
 #patient-show-btns {
+    display: flex;
+    justify-content: center;
+    width: 188px;
+}
+
+#new-patient-btns {
     display: flex;
     justify-content: space-evenly;
     margin: auto;
     padding: 10px;
 }
+
+
 
 #add-patient-btn {
     align-items: center;
@@ -97,13 +111,16 @@ thead {
 
 #note-square {
     background-color: #E7EBE0FF;
+    box-shadow: 1px 1px 2px .5px #7DB46CFF;
 }
 
 #view-note {
     justify-self: last baseline;
 }
 
-#new-note-title {
+#new-note-title,
+#view-patient-note,
+#view-edit-note {
     text-align: center;
     margin-bottom: 2rem;
 }
@@ -114,7 +131,9 @@ thead {
 }
 
 #new-note,
-#new-patient {
+#new-patient,
+#edit-patient,
+#view-note {
     margin: auto;
     width: 20%;
 }
@@ -123,15 +142,39 @@ thead {
     text-decoration: underline;
 }
 
-#new-note-content,
-#new-patient-details,
-#edit-patient-details {
+#new-note-content {
     height: 10rem;
     margin-top: 10px;
     margin-bottom: 15px;
 }
 
 .new-note-details,
-.new-patient-details {
+.new-patient-details,
+.edit-patient-details,
+.view-note-details,
+.edit-note-content,
+.edit-note-details {
     margin-top: 15px;
+}
+
+#edit-patient-btn,
+#update-note-btn,
+#edit-note-btns {
+    margin-top: 2rem;
+}
+
+#edit-note-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.note-detail-header,
+.edit-detail-header {
+    font-weight: bold;
+}
+
+#view-patient-btn {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
 }

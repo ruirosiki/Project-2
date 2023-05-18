@@ -1,12 +1,19 @@
 <%- include("../partials/header") %>
-<h1>Edit Patient Note</h1>
+<h1 id="view-edit-note">Edit Patient Note</h1>
 
+<div class="card text-center mb-3" id="new-patient" style="width: 18rem;">
+    <div class="card-body" id="note-square">
+    <h5 class="card-title" id="edit-note-details" >Enter Updated Details</h5>
 <form action="/patients/<%= patient.id %>/<%= note.id %>?_method=PUT" method="POST" autocomplete="off">
-    <input type="text" name="noteTitle" value="<%= note.noteTitle %>"> 
-    <input type="text" name="noteContent" value="<%= note.noteContent %>">
-    <input type="text" name="noteDate" value="<%= note.noteDate %>">
-    <button type="button" class="btn btn-secondary" id="update-note">Update Patient Note</button>
+    <label class="edit-detail-header edit-note-details">Date Entered</label>
+    <input class="edit-note-details" type="datetime-local" name="noteDate" value="<%= note.noteDate %>">
+    <label class="edit-detail-header edit-note-details">Note Title</label>
+    <input class="edit-note-details" type="text" name="noteTitle" value="<%= note.noteTitle %>">
+    <label class="edit-detail-header edit-note-details">Note Content</label>
+    <textarea class="edit-note-details" id="edit-note-content" name="noteContent" value="<%= note.noteContent %>"><%= note.noteContent %></textarea>
+    <button type="submit" class="btn btn-secondary" id="update-note-btn">Update Patient Note</button>
 </form>
-
+</div>
+</div>
 
 <%- include("../partials/footer") %>

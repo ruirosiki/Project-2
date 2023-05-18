@@ -15,7 +15,7 @@
     <tr id="patients-list-row">
         <td id="p-name"><%= patient.firstName %> <%= patient.lastName %></td>
         <td id="p-phone"> <%= patient.phone %></td>
-        <td id="p-chart"><a  href="/patients/<%= patient.id %>"><button type="button" class="btn btn-secondary">View Patient Chart</button></a></td>
+        <td id="p-chart"><a  href="/patients/<%= patient.id %>"><button type="button" class="btn btn-secondary" id="view-patient-btn">View Patient Chart</button></a></td>
     </tr>
     <%  }) %>
     </tbody>

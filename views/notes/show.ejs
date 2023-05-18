@@ -1,17 +1,25 @@
 <%- include("../partials/header") %>
-<h1><%= patient.firstName %> <%= patient.lastName %></h1><br>
-<h3>
-    <label><%= patient.firstName %> <%= patient.lastName %></label><br>
-    <label><%= note.noteTitle %></label><br>
-    <label><%= note.noteDate %></label><br>
-    <label><%= note.noteContent %></label><br>
+<h1 id="view-patient-note"><%= patient.firstName %> <%= patient.lastName %></h1><br>
+<div class="card text-center mb-3" id="view-note" style="width: 18rem;">
+    <div class="card-body" id="note-square">
+    <h5 class="card-title" id="view-note-name" ><%= patient.firstName %> <%= patient.lastName %></h5>
+
+    <label class="view-note-details note-detail-header">Date Entered</label><br>
+    <label class="view-note-details "><%= note.noteDate %></label><br>
+    <label class="view-note-details note-detail-header">Note Title</label><br>
+    <label class="view-note-details"><%= note.noteTitle %></label><br>
+    <label class="view-note-details note-detail-header">Details</label><br>
+    <label class="view-note-details"><%= note.noteContent %></label><br>
 </label>
 
-<a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button type="button" class="btn btn-secondary" id="edit-note">Edit Note</button></a>
+<div id="edit-note-btns">
+<a href="/patients/<%= patient.id %>/<%= note.id %>/edit"><button type="button" class="btn btn-secondary" id="edit-note-btn">Edit Note</button></a>
 <form action="/patients/<%= patient.id %>/<%= note.id %>?_method=DELETE" method="POST">
-    <button type="submit" class="btn btn-secondary" id="delete-note">Delete Note</button>
+    <button type="submit" class="btn btn-secondary" id="delete-note-btn">Delete Note</button>
 </form>
-</h3>
+</div>
+</div>
+</div>
 
 
 
