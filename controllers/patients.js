@@ -69,14 +69,35 @@ function update(req, res, next) {
 }
 
 //DELETE - delete patient from the database
-function deletePatient(req, res, next) {
+// function deletePatient(req, res, next) {
+//   Patient.findById(req.params.id)
+//     .then((patient) => {
+//       return patient.deleteOne();
+//     })
+//     .then(() => res.redirect("/patients"))
+//     .catch(next);
+// }
+
+//SOFT DELETE - removes from views but does not actually delete patient
+function softDelete(req, res, next) {
   Patient.findById(req.params.id)
     .then((patient) => {
-      return patient.deleteOne();
+      return patient.updateOne({ isDeleted: true });
     })
     .then(() => res.redirect("/patients"))
     .catch(next);
 }
+
+//PUT - update isDeleted to false to reactivate patient
+function unDelete(req, res, next) {
+  Patient.findById(req.params.id)
+    .then((patient) => {
+      return patient.updateOne({ isDeleted: true });
+    })
+    .then(() => res.redirect("/patients"))
+    .catch(next);
+}
+function indexDischarge(req, res, next) {}
 module.exports = {
   index,
   newPatient,
@@ -84,5 +105,8 @@ module.exports = {
   show,
   updatePatientForm,
   update,
-  deletePatient,
+  // deletePatient,
+  softDelete,
+  unDelete,
+  indexDischarge,
 };

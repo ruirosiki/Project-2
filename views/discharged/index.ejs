@@ -1,5 +1,5 @@
 <%- include("../partials/header") %>
-<h1 id="my-patients">My Patients</h1>
+<h1 id="my-patients">Discharged Patients</h1>
 
 
 <table id="patient-list">
@@ -12,12 +12,15 @@
     </thead>
 <tbody id="patient-list">
     <% patients.forEach(function(patient) { %>
-        <% if (patient.isDeleted === false) { %> 
+        <% if (patient.isDeleted === true) { %> 
     <tr id="patients-list-row">
         <td id="p-name"><%= patient.firstName %> <%= patient.lastName %></td>
         <td id="p-phone"> <%= patient.phone %></td>
         <td id="p-chart"><a  href="/patients/<%= patient.id %>"><button type="button" class="btn btn-secondary" id="view-patient-btn">View Patient Chart</button></a></td>
     </tr>
+    <form action="/patients/<%= patient.id %>?_method=PUT" method="POST">
+        <button type="submit" class="btn btn-secondary" id="patient-show-btns">Reactivate Patient</button>
+    </form>
     <%  } %>
     <% }) %>
     </tbody>

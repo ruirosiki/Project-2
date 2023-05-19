@@ -7,7 +7,7 @@ const noteSchema = new mongoose.Schema({
   //     type: String,
   //     required: true,
   //   },
-  noteDate: Date,
+  noteDate: { type: Date, required: true },
   //   timestamps: true,
 });
 

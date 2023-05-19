@@ -24,6 +24,15 @@ router.get("/:id/edit", patientCtrl.updatePatientForm);
 router.put("/:id", patientCtrl.update);
 
 //route to delete patient
-router.delete("/:id", patientCtrl.deletePatient);
+// router.delete("/:id", patientCtrl.deletePatient);
+
+//route to soft delete patient - update route because we are updating the isDeleted on the patient
+router.put("/:id", patientCtrl.softDelete);
+
+//route to show discharged patients
+router.get("/discharge/index", patientCtrl.indexDischarge);
+
+//route to unDelete patient
+router.put("/patients/", patientCtrl.unDelete);
 
 module.exports = router;

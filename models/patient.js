@@ -23,7 +23,10 @@ const patientSchema = new mongoose.Schema({
   //use note schema to add many notes
   note: [noteSchema],
   //soft delete from mongoose fo future use.
-  isDeleted: Boolean,
+  isDeleted: {
+    type: Boolean,
+    default: false,
+  },
   //use diagnosis schema to add many diagnosis
   // diagnosis: [diagnosisSchema],
   // timestamps: true,
