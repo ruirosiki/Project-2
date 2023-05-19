@@ -14,10 +14,10 @@ This full-stack web application uses CRUD to create a patient database allowing 
 1. HTML
 2. CSS
 3. JavaScript
-4. Node.js
-5. MongoDB
+4. MongoDB
+5. Mongoose
 6. Express
-7. Mongoose
+7. Node.js
 8. Bootstrap
 
 # Getting Started
@@ -26,7 +26,7 @@ The user will login using their Google account. Once logged in the user will hav
 
 [Click to Start Using Patient Tracker](https://patienttracker.fly.dev)
 
-## IceBox Features
+## Future Features
 
 - [ ] Soft Delete patients so they can be reactivated
 - [ ] Option for user to create an account
@@ -34,3 +34,7 @@ The user will login using their Google account. Once logged in the user will hav
 - [ ] Incorporate NHI Symptoms API
 - [ ] Incorporate MEDAPI for medication tracking
 - [ ] Add a signature option for patient notes
+
+## Trello Board
+
+[View Project Trello Board](https://trello.com/b/i3XLnZiN/project-2-patient-tracker)
