@@ -1,20 +1,23 @@
 <%- include("../partials/header") %>
-<h1 id="new-note-title">
-New Patient Note
-</h1>
-<div class="card text-center mb-3" id="new-note" style="width: 18rem;">
-    <div class="card-body" id="note-square">
-    <h5 class="card-title" id="new-note-patient" ><%= patient.firstName %> <%= patient.lastName %></h5>
-<form id="new-note-form" action="/patients/<%= patient._id %>/notes" method="POST" autocomplete="off">
-    <label class="new-note-details">Date</label>
-    <input type="datetime-local" name="noteDate">
-    <label class="new-note-details">Note Title</label>
-    <input type="text" name="noteTitle">
-    <label class="new-note-details">Patient Note</label>
-    <textarea id="new-note-content" name="noteContent"></textarea>
-    <button type="submit" class="btn btn-secondary" id="save-note">Save Patient Note</button>
-</form>
-</div>
-</div>
+    <h1 id="new-note-title">
+        New Patient Note
+    </h1>
+    <div class="card text-center mb-3" id="new-note" style="width: 18rem;">
+        <div class="card-body" id="note-square">
+            <h5 class="card-title" id="new-note-patient">
+                <%= patient.firstName %>
+                    <%= patient.lastName %>
+            </h5>
+            <form id="new-note-form" action="/patients/<%= patient._id %>/notes" method="POST" autocomplete="off">
+                <label class="new-note-details">Date</label>
+                <input type="datetime-local" name="noteDate">
+                <label class="new-note-details">Note Title</label>
+                <input type="text" name="noteTitle">
+                <label class="new-note-details">Patient Note</label>
+                <textarea id="new-note-content" name="noteContent"></textarea>
+                <button type="submit" class="btn btn-secondary" id="save-note">Save Patient Note</button>
+            </form>
+        </div>
+    </div>
 
-<%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>

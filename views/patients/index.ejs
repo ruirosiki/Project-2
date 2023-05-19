@@ -1,23 +1,27 @@
 <%- include("../partials/header") %>
-<h1 id="my-patients">My Patients</h1>
-
-
-<table id="patient-list">
-    <thead id="patients-list-header">
-        <tr>
-            <th id="p-header">Patient Name</th>
-            <th id="p-header">Phone Number</th>
-            <th id="p-header">Patient Chart</th>
-        </tr>
-    </thead>
-<tbody id="patient-list">
-    <% patients.forEach(function(patient) { %>
-    <tr id="patients-list-row">
-        <td id="p-name"><%= patient.firstName %> <%= patient.lastName %></td>
-        <td id="p-phone"> <%= patient.phone %></td>
-        <td id="p-chart"><a  href="/patients/<%= patient.id %>"><button type="button" class="btn btn-secondary" id="view-patient-btn">View Patient Chart</button></a></td>
-    </tr>
-    <%  }) %>
-    </tbody>
-</table>
-<%- include("../partials/footer") %>
+    <h1 id="my-patients">My Patients</h1>
+    <table id="patient-list">
+        <thead id="patients-list-header">
+            <tr>
+                <th id="p-header">Patient Name</th>
+                <th id="p-header">Phone Number</th>
+                <th id="p-header">Patient Chart</th>
+            </tr>
+        </thead>
+        <tbody id="patient-list">
+            <% patients.forEach(function(patient) { %>
+                <tr id="patients-list-row">
+                    <td id="p-name">
+                        <%= patient.firstName %>
+                            <%= patient.lastName %>
+                    </td>
+                    <td id="p-phone">
+                        <%= patient.phone %>
+                    </td>
+                    <td id="p-chart"><a href="/patients/<%= patient.id %>"><button type="button"
+                                class="btn btn-secondary" id="view-patient-btn">View Patient Chart</button></a></td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+    <%- include("../partials/footer") %>

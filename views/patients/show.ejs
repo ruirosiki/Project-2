@@ -1,37 +1,43 @@
 <%- include("../partials/header") %>
-<div id="patient-show">
-    <h1>
-        <%= patient.firstName %> 
-        <%= patient.lastName %>
-    </h1>
-    <h4><%= patient.phone %></h4>
-</div>
-<hr>
-<div id="patient-btns">
-<hr> 
-<a href="/patients/<%= patient.id %>/edit"><button type="button" class="btn btn-secondary" id="patient-show-btns">Update Patient Details</button></a>
-<a href="/patients/<%= patient.id %>/notes/new"><button type="button" class="btn btn-secondary" id="patient-show-btns">Enter Patient Note</button></a>
-<form action="/patients/<%= patient.id %>?_method=DELETE" method="POST">
-    <button type="submit" class="btn btn-secondary" id="patient-show-btns">Discharge Patient</button>
-</form>
-</div>
-
-<div id="patient-notes-index">
-<% if (patient.note.length) { %>
-        <% patient.note.forEach(function(note) { %>
+    <div id="patient-show">
+        <h1>
+            <%= patient.firstName %>
+                <%= patient.lastName %>
+        </h1>
+        <h4>
+            <%= patient.phone %>
+        </h4>
+    </div>
+    <hr>
+    <div id="patient-btns">
+        <hr>
+        <a href="/patients/<%= patient.id %>/edit"><button type="button" class="btn btn-secondary"
+                id="patient-show-btns">Update Patient Details</button></a>
+        <a href="/patients/<%= patient.id %>/notes/new"><button type="button" class="btn btn-secondary"
+                id="patient-show-btns">Enter Patient Note</button></a>
+        <form action="/patients/<%= patient.id %>?_method=DELETE" method="POST">
+            <button type="submit" class="btn btn-secondary" id="patient-show-btns">Discharge Patient</button>
+        </form>
+    </div>
+    <div id="patient-notes-index">
+        <% if (patient.note.length) { %>
+            <% patient.note.forEach(function(note) { %>
                 <div class="card text-center mb-3" style="width: 18rem;">
-                <div class="card-body" id="note-square">
-                <h5 class="card-title"><%= note.noteTitle %></h5>
-                <a href="/patients/<%= patient.id %>/<%=note.id %>"><button type="button" class="btn btn-secondary" id="view-note-btn">View Note</button></a>
-            </div>
-        </div>
-                <% }) %>
-                <% } else {%>               
-                    <div class="card text-center mb-3" style="width: 18rem;">
                     <div class="card-body" id="note-square">
-                    <h5 class="card-title" id="no-notes">No Notes Yet</h5>
+                        <h5 class="card-title">
+                            <%= note.noteTitle %>
+                        </h5>
+                        <a href="/patients/<%= patient.id %>/<%=note.id %>"><button type="button"
+                                class="btn btn-secondary" id="view-note-btn">View Note</button></a>
                     </div>
                 </div>
-                <% } %>
-            </div>
-<%- include("../partials/footer") %>
+                <% }) %>
+                    <% } else {%>
+                        <div class="card text-center mb-3" style="width: 18rem;">
+                            <div class="card-body" id="note-square">
+                                <h5 class="card-title" id="no-notes">No Notes Yet</h5>
+                            </div>
+                        </div>
+                        <% } %>
+    </div>
+    <%- include("../partials/footer") %>

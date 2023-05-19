@@ -1,17 +1,16 @@
 <%- include("../partials/header") %>
-<h1 id="edit-patient-show">Edit Patient Details</h1>
+    <h1 id="edit-patient-show">Edit Patient Details</h1>
+    <div class="card text-center mb-3" id="edit-patient" style="width: 18rem;">
+        <div class="card-body" id="note-square">
+            <h5 class="card-title" id="edit-patient-title">Enter Updated Info</h5>
 
-<div class="card text-center mb-3" id="edit-patient" style="width: 18rem;">
-    <div class="card-body" id="note-square">
-    <h5 class="card-title" id="edit-patient-title" >Enter Updated Info</h5>
+            <form action="/patients/<%= patient.id %>?_method=PUT" method="POST" autocomplete="off">
+                <input class="edit-patient-details" type="text" name="firstName" value="<%= patient.firstName %>">
+                <input class="edit-patient-details" type="text" name="lastName" value="<%= patient.lastName %>">
+                <input class="edit-patient-details" type="text" name="phone" value="<%= patient.phone %>">
+                <button type="submit" class="btn btn-secondary" id="edit-patient-btn">Update Patient Details</button>
+            </form>
+        </div>
+    </div>
 
-<form action="/patients/<%= patient.id %>?_method=PUT" method="POST" autocomplete="off">
-    <input class="edit-patient-details" type="text" name="firstName" value="<%= patient.firstName %>"> 
-    <input class="edit-patient-details" type="text" name="lastName" value="<%= patient.lastName %>">
-    <input class="edit-patient-details" type="text" name="phone" value="<%= patient.phone %>">
-    <button type="submit" class="btn btn-secondary" id="edit-patient-btn">Update Patient Details</button>
-</form>
-</div>
-</div>
-
-<%- include("../partials/footer") %>
+    <%- include("../partials/footer") %>
