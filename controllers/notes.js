@@ -13,7 +13,7 @@ function newNote(req, res, next) {
 
 //CREATE - creates a note and then redirects back to patients page
 function createNote(req, res, next) {
-  //create note and add to the patient
+  //create note and add to the patients document
   Patient.findById(req.params.patientId)
     .then((patient) => {
       patient.note.push(req.body);
